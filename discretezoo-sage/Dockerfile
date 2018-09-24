@@ -12,6 +12,7 @@ RUN    apt-get update -qq \
     && rm -rf /var/lib/apt/lists/*
 
 USER sage
+RUN %system wget https://raw.githubusercontent.com/sagemath/sage/8.2/Makefile -O ${HOME}/sage/Makefile
 RUN sage -i bliss gap_packages database_gap
 RUN sage -pip install psycopg2
 RUN git clone --recursive https://github.com/DiscreteZOO/DiscreteZOO-sage.git ${HOME}/DiscreteZOO-sage
