@@ -17,3 +17,4 @@ RUN mkdir ${HOME}/.discretezoo
 RUN wget http://discretezoo.xyz/discretezoo.db -O ${HOME}/.discretezoo/discretezoo.db -q
 RUN ln -s ${HOME}/DiscreteZOO-sage/discretezoo ${HOME}/sage/local/lib/python2.7/site-packages/discretezoo
 RUN sage -pip install psycopg2
+RUN sage -i bliss gap_packages database_gap
