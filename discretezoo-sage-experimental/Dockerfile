@@ -14,7 +14,7 @@ RUN    apt-get update -qq \
 USER sage
 RUN wget https://raw.githubusercontent.com/sagemath/sage/8.2/Makefile -O ${HOME}/sage/Makefile
 RUN sage -i bliss gap_packages database_gap
-RUN sage -pip install psycopg2
+RUN sage -pip install psycopg2-binary
 RUN git clone --recursive https://github.com/DiscreteZOO/DiscreteZOO-sage.git ${HOME}/DiscreteZOO-sage
 RUN ln -s ${HOME}/DiscreteZOO-sage/discretezoo ${HOME}/sage/local/lib/python2.7/site-packages/discretezoo
 RUN mkdir ${HOME}/.discretezoo
